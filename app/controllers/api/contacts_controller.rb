@@ -13,9 +13,11 @@ class Api::ContactsController < ApplicationController
   def update
     @person = Contact.find_by(id: params[:id])
     @person.first_name = params[:first_name] || @person.first_name
+    @person.middle_name = params[:middle_name] || @person.middle_name
     @person.last_name = params[:last_name] || @person.last_name
     @person.email = params[:email] || @person.email
     @person.phone_number = params[:phone_number] || @person.phone_number
+    @person.bio = params[:bio] || @person.bio
     if @person.save
       render "show.json.jbuilder"
     else render json: {errors: @person.errors.full_messages}, status: :unprocessable_entity
@@ -25,9 +27,11 @@ class Api::ContactsController < ApplicationController
   def create
     @person = Contact.new
     @person.first_name = params[:first_name]
+    @person.middle_name = params[:middle_name]
     @person.last_name = params[:last_name]
     @person.email = params[:email]
     @person.phone_number = params[:phone_number]
+    @person.bio = params[:bio]
     if @person.save
       render "show.json.jbuilder"
     else render json: {errors: @person.errors.full_messages}, status: :unprocessable_entity

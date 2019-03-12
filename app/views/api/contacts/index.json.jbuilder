@@ -11,5 +11,6 @@ json.array! @person.each do |person|
   json.updated_at person.friendly_updated_at
   json.full person.full_name
   json.bio person.bio
+  json.current_user current_user
 end
   

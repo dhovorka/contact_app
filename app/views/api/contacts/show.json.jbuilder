@@ -7,4 +7,3 @@ json.phone_number @person.phone_number
 json.updated_at @person.friendly_updated_at
 json.full @person.full_name
 json.bio @person.bio
-

@@ -1,0 +1,24 @@
+<h1>New Contact</h1>
+<form action="/contacts" method="post">
+
+  <div>
+    first name: <input type="text" name="first_name" value="<%= @person.first_name %>"/>
+  </div>
+  <div>
+    last name: <input type="text" name="last_name" value="<%= @person.last_name %>" />
+  </div>
+  <div>
+    middle name: <input type="text" name="middle_name" value="<%= @person.middle_name %>" />
+  </div>
+  <div>
+    email: <input type="text" name="email" value="<%= @person.email %>" />
+  </div>
+  <div>
+    phone number: <input type="text" name="phone_number" value="<%= @person.phone_number %>" />
+  </div>
+<div>
+    bio: <input type="text" name="bio" value="<%= @person.bio %>" />
+  </div>
+  <input type="submit" name="" value="Submit New Contact" />
+</form> 
+  
